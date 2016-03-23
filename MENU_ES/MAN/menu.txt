@@ -1,0 +1,236 @@
+MENÚ BOOT ver.1.4
+-----------------
+
+Contenido
+---------
+
+Descripción
+Características
+Opciones
+Limitaciones
+Cómo funciona
+Un ejemplo
+    BOOT
+    MENU_BAS como BOOT
+    MENU_CFG
+    MENU_LST
+    viendo el DIR del soporte
+MENU_SCR
+Notas
+
+
+Descripción
+-----------
+
+El programa 'MENÚ BOOT' está pensado para su uso en discos y/o microdrives que contengan varios programas en el mismo soporte y que requieran de distintos ficheros BOOT o EXEC para ser ejecutados. Sirve pues para facilitar la selección de programas mediante un menú una vez insertado el soporte en el lector.
+
+También resulta útil para ejecutar una aplicación que admita el uso de distintos ficheros de datos o para cualquier cosa susceptible de ser lanzada desde un fichero BOOT.
+
+En definitiva, el 'MENÚ BOOT' no es más que un BOOT de BOOTs interactivo.
+
+
+Características
+---------------
+
+Opciones
+--------
+
+El programa es capaz de mostrar una lista de aplicaciones, resaltando una de ellas, así como mostrar la información correspondiente a cada una de las entradas, permitiendo hacer su elección mediante las teclas 'Arriba' (sube), 'Abajo' (baja) y 'Espacio' (opci).
+
+Si no existe el fichero de configuración MENU_CFG, el programa mostrará por defecto sólo una ventana central con las opciones del menú y su información. Esto ocurre si está activado el TK2 o bien no se indica el valor de conf$ en el programa menu_bas.
+
+La ventana donde se muestra el menú y la información puede ser movida de sitio (xw, yw), y redimensionada (anch, alto). También la anchura de menú puede ser redimensionada (lon), siendo la anchura de la ventana de información inversamente proporcional a los cambios de la anchura del menú, es decir, si ampliamos la anchura del menú reduciremos la anchura del espacio de información. Afortunadamente siempre podemos cambiar la anchura total para compensar, teniendo como límite el ancho de la pantalla. Podemos, además, intercambiar el orden de visualización de menu e info.
+
+Las entradas en el menú no están limitadas a la altura de la ventana. Si el número de entradas del menú excede la altura en caracteres de la ventana de menú, se mostrará un indicador  en la ventana del número de opción seleccionada y del total de opciones del menú, y podrá hacerse scroll con las opciones del menú en la ventana.
+
+Si un nombre de opción en 'MENU_LST' contiene caracteres "_", se sustituirán en el menú por un espacio en blanco.
+
+La primera línea del texto informativo acerca de cada aplicación se muestra resaltada automáticamente (prime).
+
+Podemos cambiar todos los valores respecto a los colores de papel (pa_*) y tinta (in_*), la sombra de la ventana, el resaltado del menú, el marco de las ventanas, etc...
+
+Dependiendo  de la configuración del fichero menu_cfg, el programa puede mostrar un fondo de pantalla con un color de fondo (fondo) y una captura de imagen fondo$) sobre él que colocaremos en la dirección de memoria de pantalla deseada. La imagen puede tener la altura que deseemos (no superando la altura de pantalla en pixels, es decir, 256), pero la anchura de la imagen debe ser la anchura de la pantalla (512 o 256, según el modo de pantalla), pues los datos se cargan directamente con LBYTES.
+
+Se muestra también, en este último caso, un título (xti, yti) en una línea, un subtítulo (xsu, ysu) en dos líneas y una nota al pie (xno, yno) en una línea, con la información acerca del contenido general del disco que estamos mostrando.
+
+El programa NO requiere ninguna extensión al sistema como p.ej. Toolkit II (TK2) u otras, ya que está escrito en SuperBASIC estándar, pero el uso de TK2 permite detectar si existe un fichero de configuración y hace uso de los valores por defecto PROG_USE y DATA_USE..., así pues su uso es recomendable (1).
+
+
+Limitaciones
+------------
+
+El programa cuenta con algunas limitaciones:
+
+	Requiere que todos los ficheros se encuentren en la misma ubicación.
+	El nombre de fichero sin la extensión y el nombre del menú han de ser el mismo.
+	La imagen de fondo tiene forzosamente que ser como el ancho de la pantalla y no mayor que esta. 
+
+
+Cómo funciona
+-------------
+
+El programa, que tiene el nombre BOOT, se carga mediante la facilidad del sistema de cargar ficheros BOOT al introducir el soporte y pulsar F1 o F2. Desde ahí llamamos a MENU_BAS. Podemos renombrar MENU_BAS para que se inicie como BOOT.
+
+Establece el modo de pantalla (modo) y la ubicación de los archivos (disp$), carga el resto de variables (VALORES) y dibuja la pantalla (PANTALLA).
+
+Seguidamente lee el archivo MENU_LST del disco (LISTA) para conocer la información del disco y las aplicaciones que debe mostrar, y las muestra (MOSTRAR). La estructura del archivo MENU_LST es auto-explicativa. Ver más abajo.
+
+A continuación nos da la opción de que seleccionemos (SELECCION) las distintas entradas del menú, mientras nos va mostrando la información correspondiente a cada una de ellas que se encuentra en cada archivo _INFO de cada aplicación. P.ej. Si tenemos un juego que se llama JUEGO_EXE que queremos ejecutar, deberemos crear un archivo JUEGO_INFO para el 'MENÚ BOOT'. Este _INFO debe adaptarse al tamaño de la ventana de información del programa. Su primera línea será mostrada resaltada en el programa. A parte del _INFO podemos adjuntar un _TXT con información más específica si necesitamos más explicaciones para hacer funcionar la aplicación, pero este _TXT no se mostrará desde el programa.
+
+Por último, una vez seleccionada la aplicación, sólo nos resta pulsar 'Espacio' para ejecutarla (LANZA). El  'MENÚ BOOT' llamará al _BOOT del programa que queramos ejecutar con un LRUN. De igual forma que con el _INFO en el ejemplo anterior, deberemos crear un JUEGO_BOOT que contenga las instrucciones de carga de la aplicación, por ejemplo:
+
+100 REM carga juego
+110 EXEC_W JUEGO_EXE
+
+Una vez lanzada la opción el programa termina, a no ser que tengamos activado el valor multi en el archivo MENU_CFG. En tal caso el programa permite lanzar tantos programas e instancias de programas como deseemos hasta pulsar ESC para salir. 
+
+
+Ejemplo
+-------
+
+BOOT
+----
+
+El BOOT que se adjunta carga el TK2 y lanza el programa MENU_BAS:
+
+ disp$='flp1_' : TK2_EXT : DATA_USE=disp$ : PROG_USE=disp$ : DEST_USE=disp$ : LRUN menu_bas
+
+Este BOOT es un ejemplo de cómo podemos cargar los valores que usaremos por defecto en caso de que compilemos MENU_BAS (2). Tras la compilación sólo debemos sustuir  LRUN menu_bas por:
+
+ EX menu_exe
+
+Si vamos a ejecutar MENU_BAS sin compilar, podemos incluso renombrar MENU_BAS por BOOT y quitar los REMark de las primeras líneas de MENU_BAS para cargar el TK2 como se indica en la siguiente sección.
+
+
+MENU_BAS como BOOT
+------------------
+
+Las primeras líneas del programa MENU_BAS son las únicas que deberás alterar en caso de usar MENU_BAS como BOOT o en cualquier otro caso. Estas líneas son:
+
+ 100 REMark programa boot-menu
+ 110 REMark version 1.4 - jav 2008
+ 120 :
+ 130 extension=1 : REMark TK2 cargado S/N
+ 140 :
+ 150 IF extension THEN 
+ 160   REMark Borra los REMarks siguientes
+ 170   REMark si usas 'menu_bas' como BOOT
+ 180   REMark TK2_EXT
+ 190   REMark DATA_USE="flp1_"
+ 200   REMark PROG_USE="flp1_"
+ 210   disp$=PROGD$
+ 220 ELSE 
+ 230   disp$="flp1_"  : REMark disp. x def.
+ 240   ch_fi=4        : REMark canal x def.
+ 250 END IF 
+ 260 conf$="menu_cfg" : REMark configuraci.
+ 270 menu$="menu_lst" : REMark lista menu
+ 280 :
+ 290 REMark Programa
+ 300 :
+ ...
+
+Si activamos el valor de extension (valores 0|1, línea 130) haremos uso del TK2 y sus facilidades. El valor por defercto es 1, y el resto de los valores de la configuración están pensados para que pueda compilarse el programa menu_bas.
+
+En caso de usar MENU_BAS como BOOT y activar extension, podemos quitar los REMarks de las líneas 180 a 200.
+
+Si indicamos conf$="" (cadena vacía, línea 260) el programa tomará los valores por defecto ignorando los de MENU_CFG. Igualmente, se tomarán los valores por defecto si tenemos activada la variable extension y configurado convenientemente conf$ pero no existe MENU_CFG.
+
+El archivo MENU_LST y la configuración de menu$ es imprescindible para el uso del programa en esta versión.
+
+Podemos sustituir los valores de conf$ y menu$ convenientemente, y renombrar los correspondientes archivos.
+
+disp$ indicará el directorio por defecto donde buscar los archivos necesarios. 
+
+
+MENU_CFG
+--------
+
+Podemos configurar el entorno del menú que estamos creando mediante el fichero MENU_CFG. Si el fichero MENU_CFG no existe, el programa tomará los datos de configuración por defecto.
+
+MENU_CFG contiene los valores de las variables descritas en este manual, y es autoexplicativo.
+
+
+MENU_LST
+--------
+
+Se muestra a continuación la estructura de un archivo BOOT_INFO de ejemplo con tres aplicaciones. La estructura y las lineas con '*****'  deben respetarse hasta la línea marcada como  '***** Fin de los datos'. Luego pueden añadirse comentarios:
+
+***** info para menú de programas
+***** Versión - 1 línea
+1
+***** descripción: 4 lineas de texto
+Texto del título
+Texto del subtitulo linea 1
+Texto del subtitulo linea 2
+Nota al pie
+***** número total de programas - 1 linea
+3
+***** listado de programas - 1 linea por programa
+aplicacion1
+aplicacion2
+aplicacion3
+***** Fin de los datos
+Lo que sigue a la lista de programas será ignorado
+
+Realmente las líneas que se muestran con "*****" son ignoradas, así que podemos dejarlas en blanco completamente o poner otro separador u otro texto a nuestro gusto.
+
+
+viendo el DIR del soporte
+-------------------------
+
+Listado de archivos que contendrá el soporte que empleemos para el BOOT_INFO anterior. Los ficheros _TXT no son necesarios:
+
+BOOT
+MENU_BAS
+MENU_LST
+MENU_CFG
+MENU_SCR
+LEEME_TXT
+APLICACION1_BOOT
+APLICACION1_EXE
+APLICACION1_INFO
+APLICACION1_TXT
+APLICACION2_BOOT
+APLICACION2_EXE
+APLICACION2_INFO
+APLICACION2_TXT
+APLICACION3_BOOT
+APLICACION3_EXE
+APLICACION3_INFO
+APLICACION3_TXT
+
+Mínimo listado, usando MENU_BAS renombrado como BOOT (no se listan los ficheros APLICA_* en este caso):
+
+ BOOT
+ MENU_LST
+ ...
+
+Llamando a MENU_EXE (MENU_BAS compilado) desde el BOOT (no se listan los ficheros APLICA_* en este caso):
+
+ BOOT
+ MENU_EXE
+ MENU_LST
+ ...
+
+
+MENU_SCR
+--------
+
+Con el programa se adjunta imagen que puede ser usada como diseño de cabecera, y que ocupa 1/4 de la pantalla. Por defecto, el fichero se llama MENU_SCR y se carga en la posición de memoria 131972, la primera posición de la memoria de pantalla.
+
+Puede usarse cualquier otra imagen teniendo en cuenta las limitaciones antes descritas.
+
+
+Notas
+-----
+
+Recuerda definir la variable disp$ en el BOOT para indicar la ruta desde donde se ejecutarán los programas.
+
+Cargue en el _BOOT de cada aplicación las extensiones y/o parámetros que el programa requiera para su perfecta ejecución.
+
+
+(1) TK2 ya es de libre distribución y uso. Puede encontrarse en casi todas las controladoras y tarjetas de expansión para QL o bien junto a los emuladores. Podemos cargar TK2 desde disco ya que el código de este es totalmente reubicable.
+
+(2) Sin duda será necesario repasar el código fuente para evitar los WARNING del compilador y hacer su funcionamiento más rápido sustituyendo, por ejemplo, las variables numéricas por variables enteras (variable%) o terminando todos los IFs con END IF... etc.
+

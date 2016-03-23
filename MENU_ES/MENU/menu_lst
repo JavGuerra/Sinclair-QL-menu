@@ -1,0 +1,18 @@
+***** info para menô de programas
+***** Versiñn - 1 lìnea
+1
+***** descripciñn: 4 lìneas de texto
+Manual de MENUBOOT
+Texto del subtìtulo lìnea 1
+Texto del subtìtulo lìnea 2
+Nota al pie
+***** nômero total de programas - 1 lìnea
+3
+***** listado de programas - 1 lìnea por programa
+aplicacion1
+aplicacion2
+aplicacion3
+***** Fin de los datos
+Lo que sigue a la lista serå ignorado
+No dejar espacios detras de cada dato ni
+lìneas en blanco.

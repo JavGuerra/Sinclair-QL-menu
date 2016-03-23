@@ -1,0 +1,371 @@
+100 REMark programa boot-menu
+110 REMark version 1.4 - jav 2008
+120 :
+130 extension=1 : REMark TK2 cargado S/N
+140 :
+150 IF extension THEN 
+160   REMark Borra los REMarks siguientes
+170   REMark si usas 'menu_bas' como BOOT
+180   REMark TK2_EXT
+190   REMark DATA_USE="flp1_"
+200   REMark PROG_USE="flp1_"
+210   disp$=PROGD$
+220 ELSE 
+230   disp$="flp1_"  : REMark disp. x def.
+240   ch_fi=4        : REMark canal x def.
+250 END IF 
+260 conf$="menu_cfg" : REMark configuraci.
+270 menu$="menu_lst" : REMark lista menu
+280 :
+290 REMark Programa
+300 :
+310 PRIMERO   : REMark ejecuta antes
+320 VALORES   : REMark carga variables
+330 PANTALLA  : REMark dibuja pantalla
+340 VENTANA   : REMark dibuja ventana
+350 CARGA     : REMark lee entradas
+360 LISTA     : REMark lista entradas
+370 MUESTRA   : REMark primera entrada
+380 REPeat opciones
+390 SELECCION : REMark elije opcion
+400 LANZA     : REMark lanza aplicacion
+410 IF salir OR NOT multi : EXIT opciones
+420 END REPeat opciones
+430 ULTIMO    : REMark ejecuta despues
+440 STOP
+450 :
+460 REMark Procedimientos
+470 :
+480 DEFine PROCedure PRIMERO
+490 REMark Espacio para codigo de inicio
+500 END DEFine PRIMERO
+510 :
+520 DEFine PROCedure ULTIMO
+530 REMark Espacio para codigo al final
+540 END DEFine ULTIMO
+550 :
+560 DEFine PROCedure VALORES
+570 IF conf$<>""
+580 IF extension THEN 
+590  ch_val=FOP_IN(disp$&conf$)
+600  IF ch_val<>-7 THEN ch_fi=ch_val
+610 ELSE 
+620  OPEN_IN #ch_fi,disp$&conf$
+630 END IF 
+640 END IF 
+650 REMark ver menu_cfg para descripcion
+660 IF ch_val=-7 OR conf$="" THEN 
+670 multi=0 : modo=4  : an_ch=6 : al_ch=10
+680 in_ex$= "_info"   : ex_ex$= "_boot"
+690 info=1  : fondo=0 : scrbg=0 : text=1
+700 scrpos= 131072    : scrn$="menu_scr"
+710 in_bg=7 : pa_bg=82: xti=8   : yti=15
+720 xsu=4   : ysu=15  : xno=22  : yno=16
+730 xw=90   : yw=105  : anch=52 : alto=10
+740 lon=12  : voltea=0: in_me=0 : pa_me=4
+750 in_se=7 : pa_se=2 : marco=1 : t_mar=1
+760 in_in=0 : pa_in=7 : in_pri=2: pa_pri=7
+770 in_ma=7 : pa_ma=2 : sombx=8 : somby=5
+780 pa_so=0 : borde=3 : sube=208: baja=216
+790 ante=192: sigu=200: redb=248: sale=27
+800 opci=32
+810 ELSE 
+820 INPUT #ch_fi,cadena$,cadena$
+830 INPUT #ch_fi,cadena$,cadena$
+840  multi=LEE_VALOR$ : modo=LEE_VALOR$
+850  an_ch=LEE_VALOR$ : al_ch=LEE_VALOR$
+860  in_ex$=LEE_VALOR$: ex_ex$=LEE_VALOR$
+870  info=LEE_VALOR$  : fondo=LEE_VALOR$
+880  scrbg=LEE_VALOR$ : scrpos=LEE_VALOR$
+890  scrn$=LEE_VALOR$ : text=LEE_VALOR$
+900  xti=LEE_VALOR$   : yti=LEE_VALOR$
+910  xsu=LEE_VALOR$   : ysu=LEE_VALOR$
+920  xno=LEE_VALOR$   : yno=LEE_VALOR$
+930  in_bg=LEE_VALOR$ : pa_bg=LEE_VALOR$
+940  xw=LEE_VALOR$    : yw=LEE_VALOR$
+950  anch=LEE_VALOR$  : alto=LEE_VALOR$
+960  lon=LEE_VALOR$   : voltea=LEE_VALOR$
+970  in_me=LEE_VALOR$ : pa_me=LEE_VALOR$
+980  in_se=LEE_VALOR$ : pa_se=LEE_VALOR$
+990  marco=LEE_VALOR$ : t_mar=LEE_VALOR$
+1000 in_ma=LEE_VALOR$ : pa_ma=LEE_VALOR$
+1010 in_in=LEE_VALOR$ : pa_in=LEE_VALOR$
+1020 in_pri=LEE_VALOR$: pa_pri=LEE_VALOR$
+1030 sombx=LEE_VALOR$ : somby=LEE_VALOR$
+1040 pa_so=LEE_VALOR$ : borde=LEE_VALOR$
+1050 sube=LEE_VALOR$  : baja=LEE_VALOR$
+1060 ante=LEE_VALOR$  : sigu=LEE_VALOR$
+1070 redb=LEE_VALOR$  : sale=LEE_VALOR$
+1080 opci=LEE_VALOR$
+1090 CLOSE #ch_fi
+1100 END IF 
+1110  ch_bg=ch_fi+1   : ch_ma=ch_fi+2
+1120  ch_me=ch_fi+3   : ch_in=ch_fi+4
+1130  salir=0
+1140  an=(an_ch*anch)+(borde*4)
+1150  IF info THEN an=an+(borde*4)
+1160  al=(al_ch*alto)+(borde*2)
+1170  an_me=(lon*an_ch)+(borde*4)
+1180  an_in=an-an_me
+1190  xw_so=xw+sombx+(marco*2)
+1200  yw_so=yw+somby+(marco*2)
+1210  an_ma=an+(marco*4)
+1220  al_ma=al+(marco*2)
+1230  xw_ma=xw-(marco*2)
+1240  yw_ma=yw-marco
+1250 IF t_mar THEN 
+1260  al_ma=al_ma+al_ch
+1270  yw_ma=yw_ma-al_ch
+1280 END IF 
+1290 IF voltea
+1300  xw_me=xw+an_in
+1310  xw_in=xw
+1320 ELSE 
+1330  xw_me=xw
+1340  xw_in=xw+an_me
+1350 END IF 
+1360 END DEFine VALORES
+1370 :
+1380 DEFine FuNction LEE_VALOR$
+1390 INPUT #ch_fi,cadena$
+1400 INPUT #ch_fi,cadena$
+1410 RETurn cadena$
+1420 END DEFine LEE_VALOR$
+1430 :
+1440 DEFine PROCedure PANTALLA
+1450 IF modo=256 : modo=8 : ELSE modo=0
+1460 IF PEEK(98403)<>modo : MODE modo
+1470 IF fondo
+1480 OPEN  #ch_bg,scr_512x256a0x0
+1490 PAPER #ch_bg,pa_bg : INK #ch_bg,in_bg
+1500 CLS   #ch_bg
+1510 IF scrbg: LBYTES disp$&scrn$,scrpos
+1520 PAUSE 1 : REMark necesita en emulador
+1530 END IF 
+1540 OPEN  #ch_ma,'scr_'&an_ma&'x'&al_ma&'a'&xw_ma&'x'&yw_ma
+1550 OPEN  #ch_me,'scr_'&an_me&'x'&al&'a'&xw_me&'x'&yw
+1560 IF info
+1570 OPEN  #ch_in,'scr_'&an_in&'x'&al&'a'&xw_in&'x'&yw
+1580 END IF 
+1590 END DEFine PANTALLA
+1600 :
+1610 DEFine PROCedure VENTANA
+1620 BORDER#ch_me,0
+1630 IF info THEN BORDER #ch_in,0
+1640 IF sombx OR somby
+1650 WINDOW#ch_ma,an,al,xw_so,yw_so
+1660 PAPER #ch_ma,pa_so : CLS #ch_ma
+1670 WINDOW#ch_ma,an_ma,al_ma,xw_ma,yw_ma
+1680 END IF 
+1690 IF marco OR t_mar
+1700 PAPER #ch_ma,pa_ma : INK #ch_ma,in_ma
+1710 CLS   #ch_ma
+1720 BORDER#ch_ma,marco
+1730 END IF 
+1740 PAPER #ch_me,pa_me : INK #ch_me,in_me
+1750 CLS   #ch_me
+1760 BORDER#ch_me,borde
+1770 IF info
+1780 PAPER #ch_in,pa_in : INK #ch_in,in_in
+1790 CLS   #ch_in
+1800 BORDER#ch_in,borde
+1810 END IF 
+1820 END DEFine VENTANA
+1830 :
+1840 DEFine PROCedure CARGA
+1850 IF extension THEN 
+1860  ch_fi=FOP_IN(disp$&menu$)
+1870 ELSE 
+1880  OPEN_IN #ch_fi,disp$&menu$
+1890 END IF 
+1900 REMark cargando textos
+1910 INPUT #ch_fi,cadena$,cadena$
+1920 INPUT #ch_fi,cadena$,cadena$
+1930 INPUT #ch_fi,titu$
+1940 INPUT #ch_fi,sub1$
+1950 INPUT #ch_fi,sub2$
+1960 INPUT #ch_fi,nota$
+1970 REMark mostrando textos
+1980 IF fondo AND text
+1990 OVER  #ch_bg,1
+2000 AT    #ch_bg,xti,yti
+2010 CSIZE #ch_bg,1,1
+2020 PRINT #ch_bg,titu$
+2030 CSIZE #ch_bg,0,0
+2040 AT    #ch_bg,xsu,ysu
+2050 PRINT #ch_bg,sub1$
+2060 AT    #ch_bg,xsu+1,ysu
+2070 PRINT #ch_bg,sub2$
+2080 AT    #ch_bg,xno,yno
+2090 PRINT #ch_bg,nota$
+2100 OVER  #ch_bg,0
+2110 END IF 
+2120 REMark cargando numero de programas
+2130 INPUT #ch_fi,cadena$
+2140 INPUT #ch_fi,progs
+2150 INPUT #ch_fi,cadena$
+2160 punt=1 : old_punt=1 : guia=1
+2170 pos= 1 : old_pos= 1 : tope=progs
+2180 IF progs>alto THEN tope=alto-1
+2190 DIM lista$(progs,2,lon)
+2200 REMark cargando y mostrando listado
+2210 FOR bu=1 TO progs
+2220   INPUT #ch_fi,cadena$
+2230   lista$(bu,1)=cadena$
+2240   l_cad=LEN(cadena$)
+2250   IF l_cad > lon THEN 
+2260     cadena$=cadena$(1 TO lon)
+2270     l_cad=lon
+2280   END IF 
+2290   REPeat b
+2300   val="_" INSTR cadena$
+2310   IF val  THEN 
+2320       cadena$(val)=" "
+2330     ELSE 
+2340       EXIT b
+2350   END IF 
+2360   END REPeat b
+2370   IF l_cad < lon THEN 
+2380     FOR b=1 TO lon-l_cad
+2390       cadena$=cadena$&" "
+2400     END FOR b
+2410   END IF 
+2420   lista$(bu,2)=cadena$
+2430 END FOR bu
+2440 CLOSE #ch_fi
+2450 END DEFine CARGA
+2460 :
+2470 DEFine PROCedure LISTA
+2480 IF t_mar
+2490   AT #ch_ma,0,0
+2500   PRINT #ch_ma,titu$
+2510 END IF 
+2520 AT #ch_me,0,0
+2530 FOR b=guia TO guia+tope-1
+2540   PRINT #ch_me,lista$(b,2)
+2550 END FOR b
+2560 END DEFine LISTA
+2570 :
+2580 DEFine PROCedure MUESTRA
+2590 aplica$=lista$(pos,1)
+2600 IF progs>alto THEN 
+2610 AT    #ch_me,alto-1,0
+2620 PRINT #ch_me,pos;"/";progs;" "
+2630 END IF 
+2640 :
+2650 AT    #ch_me,old_punt-1,0
+2660 PRINT #ch_me,lista$(old_pos,2)
+2670 AT    #ch_me,punt-1,0
+2680 PAPER #ch_me,pa_se : INK #ch_me,in_se
+2690 PRINT #ch_me,lista$(pos,2)
+2700 PAPER #ch_me,pa_me : INK #ch_me,in_me
+2710 :
+2720 IF info THEN 
+2730 CLS   #ch_in
+2740 AT    #ch_in,0,0
+2750 IF extension THEN 
+2760  ch_fi=FOP_IN(disp$&aplica$&in_ex$)
+2770 ELSE 
+2780  OPEN_IN #ch_fi,disp$&aplica$&in_ex$
+2790 END IF 
+2800 PAPER #ch_in,pa_pri: INK #ch_in,in_pri
+2810 INPUT #ch_fi,cadena$
+2820 PRINT #ch_in,cadena$
+2830 PAPER #ch_in,pa_in : INK #ch_in,in_in
+2840 REPeat bu
+2850   IF EOF(#ch_fi) THEN EXIT bu
+2860   INPUT #ch_fi,cadena$
+2870   PRINT #ch_in,cadena$
+2880 END REPeat bu
+2890 CLOSE #ch_fi
+2900 END IF 
+2910 END DEFine MUESTRA
+2920 :
+2930 DEFine PROCedure SELECCION
+2940 REPeat bucle
+2950   tecla=CODE(INKEY$(-1))
+2960   old_pos=pos : old_punt=punt
+2970   SELect ON tecla
+2980     =opci : EXIT bucle
+2990     =sale : salir=1   : EXIT bucle
+3000     =redb : VENTANA   : LISTA
+3010     =sube :
+3020      IF pos=1 THEN 
+3030        pos=progs : old_pos=pos
+3040        punt=tope : old_punt=punt
+3050        guia=progs-tope+1 : LISTA
+3060      ELSE 
+3070        pos=pos-1
+3080        IF punt=1 THEN 
+3090          guia=guia-1 : LISTA
+3100        ELSE 
+3110          punt=punt-1
+3120        END IF 
+3130      END IF 
+3140     =baja
+3150      IF pos=progs THEN 
+3160        pos= 1 : old_pos=pos
+3170        punt=1 : old_punt=punt
+3180        guia=1 : LISTA
+3190      ELSE 
+3200        pos=pos+1
+3210        IF punt=tope
+3220          guia=guia+1 : LISTA
+3230        ELSE 
+3240          punt=punt+1
+3250        END IF 
+3260      END IF 
+3270     =ante
+3280      IF pos=1
+3290        pos=progs : old_pos=pos
+3300        punt=tope : old_punt=punt
+3310        guia=progs-tope+1
+3320      ELSE 
+3330        pos=pos-tope
+3340        guia=guia-tope
+3350        IF pos<1 OR pos-punt<0
+3360          pos= 1 : old_post=1
+3370          punt=1 : old_punt=1
+3380          guia=1
+3390        END IF 
+3400      END IF 
+3410      LISTA
+3420     =sigu
+3430      IF pos=progs
+3440        pos=1 : old_ops=pos
+3450        punt=1: old_punt=1
+3460        guia=1
+3470      ELSE 
+3480        pos=pos+tope
+3490        guia=guia+tope
+3500        IF pos>progs OR (progs-pos)-(tope-punt)<0
+3510          pos=progs : old_pos=pos
+3520          punt=tope : old_punt=punt
+3530          guia=progs-tope+1
+3540        END IF 
+3550      END IF 
+3560      LISTA
+3570   END SELect 
+3580   MUESTRA
+3590 END REPeat bucle
+3600 :
+3610 END DEFine SELECCION
+3620 :
+3630 DEFine PROCedure LANZA
+3640 IF salir OR NOT multi THEN 
+3650 BORDER#ch_ma,0
+3660 PAPER #ch_ma,0 : CLS #ch_ma
+3670 CLOSE #ch_ma
+3680 CLOSE #ch_me
+3690 IF info
+3700 CLOSE #ch_in
+3710 END IF 
+3720 IF fondo
+3730 PAPER #ch_bg,0 : CLS #ch_bg
+3740 CLOSE #ch_bg
+3750 END IF 
+3760 END IF 
+3770 IF NOT salir
+3780 REMark LRUN disp$&aplica$&ex_ex$
+3790 END IF 
+3800 END DEFine LANZA

@@ -19,7 +19,7 @@ Se muestra a continuación un ejemplo de uso que corresponde al menú de inicio 
 
 Sigue las indicaciones que encontrarás en el manual:
 
-* Versión en formato RTF: [menu.rtf](MENU_ES/MAN/manu.rtf "menu.rtf")
-* Versión en formato TXT: [menu.txt](MENU_ES/MAN/manu.txt "menu.rtf")
+* Versión en formato RTF: [menu.rtf](MENU_ES/MAN/menu.rtf "menu.rtf")
+* Versión en formato TXT: [menu.txt](MENU_ES/MAN/menu.txt "menu.rtf")
 
 Visita: [SinclairQL.es](http://sinclairql.es "Sinclair QL Recursos en Castellano") para más información y recursos en castellano.

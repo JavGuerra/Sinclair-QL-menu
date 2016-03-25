@@ -200,13 +200,13 @@ APLICACION3_EXE
 APLICACION3_INFO
 APLICACION3_TXT
 
-Mínimo listado, usando MENU_BAS renombrado como BOOT (no se listan los ficheros APLICA_* en este caso):
+Mínimo listado, usando MENU_BAS renombrado como BOOT (no se listan los ficheros APLICACIONn_* en este caso):
 
  BOOT
  MENU_LST
  ...
 
-Llamando a MENU_EXE (MENU_BAS compilado) desde el BOOT (no se listan los ficheros APLICA_* en este caso):
+Llamando a MENU_EXE (MENU_BAS compilado) desde el BOOT (no se listan los ficheros APLICACIONn_* en este caso):
 
  BOOT
  MENU_EXE

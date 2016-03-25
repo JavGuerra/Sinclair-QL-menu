@@ -13,6 +13,7 @@ Un ejemplo
     BOOT
     MENU_BAS como BOOT
     MENU_CFG
+      Parámetros del menú
     MENU_LST
     viendo el DIR del soporte
 MENU_SCR
@@ -149,6 +150,48 @@ MENU_CFG
 Podemos configurar el entorno del menú que estamos creando mediante el fichero MENU_CFG. Si el fichero MENU_CFG no existe, el programa tomará los datos de configuración por defecto.
 
 MENU_CFG contiene los valores de las variables descritas en este manual, y es autoexplicativo.
+
+
+Parámetros del menú
+-------------------
+
+A través de MENU_CFG podemos modificar los siguientes parámetros:
+
+- Modo de pantalla, 512, 256, 8, 4
+- Ancho caracteres en pixels, 6, 12, n
+- Alto de caracteres en pixels, 10, n
+- Extensión para info: _info
+- Extensión para archivos boot: _boot
+- ¿Termina al lanzar una tarea? s/n
+- Muestra ventana de info: s/n
+- ¿Muestra el fondo de un color? s/n
+- ¿Muestra imagen de fondo? s/n
+- Posición de memoria donde cargar la imagen: 131072
+- Fichero a mostrar: menu_scr
+- ¿Muestra texto en el fondo? (fuera de la ventana) s/n
+- Posición 'x' e 'y' del título, en chrs.
+- Posición 'x' e 'y' del subtitulo, en chrs. (segunda línea de subtítulo debajo de la primera)
+- Posición 'x' e 'y' del texto al pie, en chrs.
+- 'Tinta' de texto en el fondo.
+- 'Papel' para el fondo.
+- Posición 'x' e 'y' de la ventana del menú, en pixels.
+- Ancho y alto de la ventana en caracteres. (toma en cuenta ancho de chrs.)
+- Ancho de la lista del menú en chrs.
+- ¿Menú a la izquierfa o a la derecha?
+- 'Tinta' para el texto y 'papel' para el fondo de la ventana de menú.
+- 'Tinta' para el texto y 'papel' para el fondo de la opción seleccionada.
+- Anchura del borde de la ventana de menú y ventana de info
+- ¿Poner título en el marco de la ventana? s/n
+- 'Tinta' para el título en el marco de la ventana.
+- 'Papel' para el fondo en el marco de las ventanas de menú y ventana de info.
+- 'Tinta' y 'papel' en la ventana de información.
+- 'Tinta' y 'papel' para primera línea de información.
+- Ancho y alto de la sombra en pixels.
+- 'Papel' de la sombra.
+- Ancho del borde de las ventanas menú e info. (margen)
+- Código ASCII de las teclas de entrada: arriba, abajo, anterior, siguiente, redibujar, seleccionar, salir.
+
+Nota: 'Tinta' y 'papel' se refiere a los atributos de las correspondientes instrucciones INK y PAPER.
 
 
 MENU_LST

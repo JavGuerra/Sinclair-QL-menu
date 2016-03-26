@@ -1,0 +1,17 @@
+Configurar MENU BOOT
+
+A travƒs de 'menu_lst' configuramos las opciones del
+men™ que estamos creando, as“ como los t“tulos y pie.
+
+A travƒs de 'menu_cfg' podemos alterar los valores que
+definen el aspecto del men™, como colores, tamaño y
+posici–n de las ventanas, tipo de fondo...
+
+Los ficheros indicados son auto-explicativos. Vas
+a necesitar un editor de texto para modificarlos.
+
+Para adaptar el arranque a las caracter“sticas de tu
+aplicaci–n y el soporte elegido, deberŒs modificar
+el fichero BOOT y crear los ficheros _info y _boot
+que deberŒn acompañar a los ejecutables relativos a
+cada una de las opciones de men™.

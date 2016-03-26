@@ -1,0 +1,17 @@
+Contenido de MENU BOOT
+
+El programa incluye los siguientes ficheros:
+
+ - boot: Arranque del programa (usando tk2)
+ - menu_bas: Arranque del programa (sin tk2)
+ - menu_cfg: Configuraciñn de paråmetros del menô
+ - menu_lst: Listado de opciones del menô de ejemplo
+ - menu_scr: Imagen para el fondo del menô
+ - Infos numerados del 1 al 5 que corresponden a las
+   distintas secciones de esta ayuda y facilitan un
+   ejemplo de uso del menô.
+ - leeme_txt
+
+Se incluye ademås un fichero de ayuda llamado:
+
+ - manual_txt

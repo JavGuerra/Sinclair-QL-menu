@@ -1,10 +1,14 @@
 MENÚ BOOT ver.1.4
 -----------------
+Por Javier Guerra
+
 
 Contenido
 ---------
 
 Descripción
+Contenido del programa
+Uso
 Características
 Opciones
 Limitaciones
@@ -17,6 +21,7 @@ Un ejemplo
     MENU_LST
     viendo el DIR del soporte
 MENU_SCR
+Corriendo el programa
 Notas
 
 
@@ -25,9 +30,41 @@ Descripción
 
 El programa 'MENÚ BOOT' está pensado para su uso en discos y/o microdrives que contengan varios programas en el mismo soporte y que requieran de distintos ficheros BOOT o EXEC para ser ejecutados. Sirve pues para facilitar la selección de programas mediante un menú una vez insertado el soporte en el lector.
 
+En definitiva, el 'MENÚ BOOT' no es más que un BOOT de BOOTs interactivo.
+
 También resulta útil para ejecutar una aplicación que admita el uso de distintos ficheros de datos o para cualquier cosa susceptible de ser lanzada desde un fichero BOOT.
 
-En definitiva, el 'MENÚ BOOT' no es más que un BOOT de BOOTs interactivo.
+La configuración por defecto de 'MENÚ BOOT' se usa para mostrar la ayuda del programa.
+
+Ejecute menu_bas para lanzar el menú que mostrará distintas secciones de ayuda en pantalla.
+
+
+Contenido del programa
+----------------------
+
+El programa incluye los siguientes ficheros:
+
+* boot: Arranque del programa (usa tk2)
+* menu_bas: Arranque del programa (sin tk2)
+* menu_cfg: Configuración de parámetros del menú
+* menu_lst: Listado de opciones del menú de ejemplo
+* menu_scr: Imagen para el fondo del menú
+* Infos numerados del 1 al 5 que corresponden a las
+  distintas secciones de esta ayuda y facilitan un
+  ejemplo de uso del menú.
+* leeme_txt
+
+Se incluye además un fichero de ayuda llamado:
+
+* manual_txt
+
+
+Uso
+---
+
+'MENÚ BOOT' está pensado para ser distribuido libremente con sus ficheros de configuración junto a los programas. No tiene pues restricciones de uso ni de modificación.
+
+El autor agradecerá sea citado en los créditos.
 
 
 Características
@@ -263,6 +300,24 @@ MENU_SCR
 Con el programa se adjunta imagen que puede ser usada como diseño de cabecera, y que ocupa 1/4 de la pantalla. Por defecto, el fichero se llama MENU_SCR y se carga en la posición de memoria 131972, la primera posición de la memoria de pantalla.
 
 Puede usarse cualquier otra imagen teniendo en cuenta las limitaciones antes descritas.
+
+
+Corriendo el programa
+---------------------
+
+Cuando ejecutamos la aplicación, se nos muestra información acerca del programa que usa el menú, su título, información adicional en forma de subtítulo o texto flotante, y un pie de texto.
+
+Estas opciones pueden estar desactivadas y sólo mostrase una ventana de selección de opciones o dos ventanas, una de selección de opciones y la otra de información relativa a la opción de menú seleccionada.
+
+Para movernos entre las distintas opciones usaremos las teclas por defecto:
+
+- Arriba: flecha arriba. Retrocede una posición en las opciones de la lista.
+- Abajo: flecha abajo. Avanza una posición en las opciones de la lista.
+- Anterior: fecha izquierda. En un listado de opciones cuyo tamaño exceda la altura de la ventana, retrocede 'n' posiciones en el listado.  El valor 'n' equivale a la altura medida en líneas del menú.
+- Siguiente: fecha derecha. En un listado de opciones cuyo tamaño exceda la altura de la ventana, avanza 'n' posiciones en el listado. El valor 'n' equivale a la altura medida en líneas del menú.
+- Redibujar: F5. Redibuja las ventanas.
+- Seleccionar: espacio. Elije la opción del menú seleccionada y ejecuta el boot indicado.
+- Salir: ESC. Sale de la aplicación.
 
 
 Notas

@@ -19,7 +19,7 @@ Se muestra a continuación un ejemplo de uso que corresponde al menú de inicio 
 
 ## Instrucciones
 
-Para obtener información y primeras indicaciones de uso, y mostrar el funcionamiento de 'MENU BOOT', ejecute:
+Para obtener información y primeras indicaciones de uso, y mostrar el funcionamiento de 'MENU BOOT', ejecute:
 
 LRUN menu_bas
 
@@ -31,15 +31,15 @@ Sigue las indicaciones que encontrarás en el manual:
 
 ## Licencia
 
-'MENU BOOT' est pensado para ser distribuido libremente con sus ficheros de configuración junto a los programas. No tiene pues restricciones de uso ni de modificación.
+'MENU BOOT' está pensado para ser distribuido libremente con sus ficheros de configuración junto a los programas. No tiene pues restricciones de uso ni de modificación.
 
-El autor agradecerá sea citado en los créditos.
+El autor agradecerá sea citado en los créditos.
 
 
 ## Contactar
 
 Puedes contactar con el autor para consultas, modificaciones o propuestas de mejora.
-También puedes contribuir a la mejora de esta aplicación a través de Github.
+También puedes contribuir a la mejora de esta aplicación a través de Github.
 
 
 

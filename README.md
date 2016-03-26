@@ -1,7 +1,8 @@
 # Sinclair QL menu
 JavGuerra multipurpose boot menu who run programs in the [Sinclair QL](https://en.wikipedia.org/wiki/Sinclair_QL "Sinclair QL info") easily.
 
-##MENU BOOT
+
+## MENU BOOT
 
 El programa, que está en su versión 1.4, fue creado y posteriormente actualizado en 2008.
 
@@ -15,11 +16,31 @@ Se muestra a continuación un ejemplo de uso que corresponde al menú de inicio 
 
 ![](IMG/ejemplo.png "Ejemplo")
 
+
 ## Instrucciones
+
+Para obtener información y primeras indicaciones de uso, y mostrar el funcionamiento de 'MENU BOOT', ejecute:
+
+LRUN menu_bas
 
 Sigue las indicaciones que encontrarás en el manual:
 
-* Versión en formato RTF: [menu.rtf](MENU_ES/MAN/menu.rtf "menu.rtf")
-* Versión en formato TXT: [menu.txt](MENU_ES/MAN/menu.txt "menu.rtf")
+* Versión en formato RTF: [manual.rtf](MENU_ES/MAN/manual.rtf "manual.rtf")
+* Versión en formato TXT: [manual.txt](MENU_ES/MAN/manual.txt "manual.txt")
+
+
+## Licencia
+
+'MENU BOOT' est pensado para ser distribuido libremente con sus ficheros de configuración junto a los programas. No tiene pues restricciones de uso ni de modificación.
+
+El autor agradecerá sea citado en los créditos.
+
+
+## Contactar
+
+Puedes contactar con el autor para consultas, modificaciones o propuestas de mejora.
+También puedes contribuir a la mejora de esta aplicación a través de Github.
+
+
 
 Visita: [SinclairQL.es](http://sinclairql.es "Sinclair QL Recursos en Castellano") para más información y recursos en castellano.

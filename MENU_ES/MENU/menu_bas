@@ -249,8 +249,8 @@
 2580 DEFine PROCedure MUESTRA
 2590 aplica$=lista$(pos,1)
 2600 IF progs>alto THEN 
-2610 AT    #ch_me,alto-1,0
-2620 PRINT #ch_me,pos;"/";progs;" "
+2610   AT    #ch_me,alto-1,0
+2620   PRINT #ch_me,pos;"/";progs;" "
 2630 END IF 
 2640 :
 2650 AT    #ch_me,old_punt-1,0
@@ -261,94 +261,94 @@
 2700 PAPER #ch_me,pa_me : INK #ch_me,in_me
 2710 :
 2720 IF info THEN 
-2730 CLS   #ch_in
-2740 AT    #ch_in,0,0
-2750 IF extension THEN 
-2760  ch_fi=FOP_IN(disp$&aplica$&in_ex$)
+2730   CLS #ch_in
+2740   AT  #ch_in,0,0
+2750   IF extension THEN 
+2760   ch_fi=FOP_IN(disp$&aplica$&in_ex$)
 2770 ELSE 
-2780  OPEN_IN #ch_fi,disp$&aplica$&in_ex$
+2780   OPEN_IN #ch_fi,disp$&aplica$&in_ex$
 2790 END IF 
-2800 PAPER #ch_in,pa_pri: INK #ch_in,in_pri
-2810 INPUT #ch_fi,cadena$
-2820 PRINT #ch_in,cadena$
-2830 PAPER #ch_in,pa_in : INK #ch_in,in_in
-2840 REPeat bu
-2850   IF EOF(#ch_fi) THEN EXIT bu
-2860   INPUT #ch_fi,cadena$
-2870   PRINT #ch_in,cadena$
-2880 END REPeat bu
-2890 CLOSE #ch_fi
-2900 END IF 
-2910 END DEFine MUESTRA
-2920 :
-2930 DEFine PROCedure SELECCION
-2940 REPeat bucle
-2950   tecla=CODE(INKEY$(-1))
-2960   old_pos=pos : old_punt=punt
-2970   SELect ON tecla
-2980     =opci : EXIT bucle
-2990     =sale : salir=1   : EXIT bucle
-3000     =redb : VENTANA   : LISTA
-3010     =sube :
-3020      IF pos=1 THEN 
-3030        pos=progs : old_pos=pos
-3040        punt=tope : old_punt=punt
-3050        guia=progs-tope+1 : LISTA
-3060      ELSE 
-3070        pos=pos-1
-3080        IF punt=1 THEN 
-3090          guia=guia-1 : LISTA
-3100        ELSE 
-3110          punt=punt-1
-3120        END IF 
-3130      END IF 
-3140     =baja
-3150      IF pos=progs THEN 
-3160        pos= 1 : old_pos=pos
-3170        punt=1 : old_punt=punt
-3180        guia=1 : LISTA
-3190      ELSE 
-3200        pos=pos+1
-3210        IF punt=tope
-3220          guia=guia+1 : LISTA
-3230        ELSE 
-3240          punt=punt+1
-3250        END IF 
-3260      END IF 
-3270     =ante
-3280      IF pos=1
-3290        pos=progs : old_pos=pos
-3300        punt=tope : old_punt=punt
-3310        guia=progs-tope+1
-3320      ELSE 
-3330        pos=pos-tope
-3340        guia=guia-tope
-3350        IF pos<1 OR pos-punt<0
-3360          pos= 1 : old_post=1
-3370          punt=1 : old_punt=1
-3380          guia=1
-3390        END IF 
-3400      END IF 
-3410      LISTA
-3420     =sigu
-3430      IF pos=progs
-3440        pos=1 : old_ops=pos
-3450        punt=1: old_punt=1
-3460        guia=1
-3470      ELSE 
-3480        pos=pos+tope
-3490        guia=guia+tope
-3500        IF pos>progs OR (progs-pos)-(tope-punt)<0
-3510          pos=progs : old_pos=pos
-3520          punt=tope : old_punt=punt
-3530          guia=progs-tope+1
-3540        END IF 
-3550      END IF 
-3560      LISTA
-3570   END SELect 
-3580   MUESTRA
-3590 END REPeat bucle
-3600 :
+2800 PAPER #ch_in,pa_pri
+2810 INK   #ch_in,in_pri
+2820 INPUT #ch_fi,cadena$
+2830 PRINT #ch_in,cadena$
+2840 PAPER #ch_in,pa_in : INK #ch_in,in_in
+2850 REPeat bu
+2860   IF EOF(#ch_fi) THEN EXIT bu
+2870   INPUT #ch_fi,cadena$
+2880   PRINT #ch_in,cadena$
+2890 END REPeat bu
+2900 CLOSE #ch_fi
+2910 END IF 
+2920 END DEFine MUESTRA
+2930 :
+2940 DEFine PROCedure SELECCION
+2950 REPeat bucle
+2960   tecla=CODE(INKEY$(-1))
+2970   old_pos=pos : old_punt=punt
+2980   SELect ON tecla
+2990     =opci : EXIT bucle
+3000     =sale : salir=1   : EXIT bucle
+3010     =redb : VENTANA   : LISTA
+3020     =sube :
+3030      IF pos=1 THEN 
+3040        pos=progs : old_pos=pos
+3050        punt=tope : old_punt=punt
+3060        guia=progs-tope+1 : LISTA
+3070      ELSE 
+3080        pos=pos-1
+3090        IF punt=1 THEN 
+3100          guia=guia-1 : LISTA
+3110        ELSE 
+3120          punt=punt-1
+3130        END IF 
+3140      END IF 
+3150     =baja
+3160      IF pos=progs THEN 
+3170        pos= 1 : old_pos=pos
+3180        punt=1 : old_punt=punt
+3190        guia=1 : LISTA
+3200      ELSE 
+3210        pos=pos+1
+3220        IF punt=tope
+3230          guia=guia+1 : LISTA
+3240        ELSE 
+3250          punt=punt+1
+3260        END IF 
+3270      END IF 
+3280     =ante
+3290      IF pos=1
+3300        pos=progs : old_pos=pos
+3310        punt=tope : old_punt=punt
+3320        guia=progs-tope+1
+3330      ELSE 
+3340        pos=pos-tope
+3350        guia=guia-tope
+3360        IF pos<1 OR pos-punt<0
+3370          pos= 1 : old_post=1
+3380          punt=1 : old_punt=1
+3390          guia=1
+3400        END IF 
+3410      END IF 
+3420      LISTA
+3430     =sigu
+3440      IF pos=progs
+3450        pos=1 : old_ops=pos
+3460        punt=1: old_punt=1
+3470        guia=1
+3480      ELSE 
+3490        pos=pos+tope
+3500        guia=guia+tope
+3510        IF pos>progs OR (progs-pos)-(tope-punt)<0
+3520          pos=progs : old_pos=pos
+3530          punt=tope : old_punt=punt
+3540          guia=progs-tope+1
+3550        END IF 
+3560      END IF 
+3570      LISTA
+3580   END SELect 
+3590   MUESTRA
+3600 END REPeat bucle
 3610 END DEFine SELECCION
 3620 :
 3630 DEFine PROCedure LANZA

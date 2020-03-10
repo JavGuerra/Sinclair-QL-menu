@@ -366,6 +366,6 @@
 3750   END IF 
 3760 END IF 
 3770 IF NOT salir
-3780  LRUN disp$&aplica$&ex_ex$
+3780   LRUN disp$&aplica$&ex_ex$
 3790 END IF 
 3800 END DEFine LANZA

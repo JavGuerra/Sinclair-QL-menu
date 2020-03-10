@@ -142,32 +142,32 @@
 1510   IF scrbg: LBYTES disp$&scrn$,scrpos
 1520   PAUSE 1 : REMark en emulador
 1530 END IF 
-1540 OPEN  #ch_ma,'scr_'&an_ma&'x'&al_ma&'a'&xw_ma&'x'&yw_ma
-1550 OPEN  #ch_me,'scr_'&an_me&'x'&al&'a'&xw_me&'x'&yw
+1540 OPEN #ch_ma,'scr_'&an_ma&'x'&al_ma&'a'&xw_ma&'x'&yw_ma
+1550 OPEN #ch_me,'scr_'&an_me&'x'&al&'a'&xw_me&'x'&yw
 1560 IF info
-1570   OPEN  #ch_in,'scr_'&an_in&'x'&al&'a'&xw_in&'x'&yw
+1570   OPEN #ch_in,'scr_'&an_in&'x'&al&'a'&xw_in&'x'&yw
 1580 END IF 
 1590 END DEFine PANTALLA
 1600 :
 1610 DEFine PROCedure VENTANA
 1620 BORDER#ch_me,0
 1630 IF info THEN BORDER #ch_in,0
-1640 IF sombx OR somby
-1650 WINDOW#ch_ma,an,al,xw_so,yw_so
-1660 PAPER #ch_ma,pa_so : CLS #ch_ma
-1670 WINDOW#ch_ma,an_ma,al_ma,xw_ma,yw_ma
+1640 IF sombx OR somby THEN 
+1650   WINDOW#ch_ma,an,al,xw_so,yw_so
+1660   PAPER #ch_ma,pa_so : CLS #ch_ma
+1670   WINDOW#ch_ma,an_ma,al_ma,xw_ma,yw_ma
 1680 END IF 
-1690 IF marco OR t_mar
-1700 PAPER #ch_ma,pa_ma : INK #ch_ma,in_ma
-1710 CLS   #ch_ma
-1720 BORDER#ch_ma,marco
+1690 IF marco OR t_mar THEN 
+1700   PAPER #ch_ma,pa_ma:INK #ch_ma,in_ma
+1710   CLS   #ch_ma
+1720   BORDER#ch_ma,marco
 1730 END IF 
-1740 PAPER #ch_me,pa_me : INK #ch_me,in_me
-1750 CLS   #ch_me
+1740 PAPER   #ch_me,pa_me:INK #ch_me,in_me
+1750 CLS     #ch_me
 1760 BORDER#ch_me,borde
 1770 IF info
-1780 PAPER #ch_in,pa_in : INK #ch_in,in_in
-1790 CLS   #ch_in
+1780   PAPER #ch_in,pa_in:INK #ch_in,in_in
+1790   CLS   #ch_in
 1800 BORDER#ch_in,borde
 1810 END IF 
 1820 END DEFine VENTANA
@@ -186,19 +186,19 @@
 1950 INPUT #ch_fi,sub2$
 1960 INPUT #ch_fi,nota$
 1970 REMark mostrando textos
-1980 IF fondo AND text
-1990 OVER  #ch_bg,1
-2000 AT    #ch_bg,xti,yti
-2010 CSIZE #ch_bg,1,1
-2020 PRINT #ch_bg,titu$
-2030 CSIZE #ch_bg,0,0
-2040 AT    #ch_bg,xsu,ysu
-2050 PRINT #ch_bg,sub1$
-2060 AT    #ch_bg,xsu+1,ysu
-2070 PRINT #ch_bg,sub2$
-2080 AT    #ch_bg,xno,yno
-2090 PRINT #ch_bg,nota$
-2100 OVER  #ch_bg,0
+1980 IF fondo AND text THEN 
+1990   OVER  #ch_bg,1
+2000   AT    #ch_bg,xti,yti
+2010   CSIZE #ch_bg,1,1
+2020   PRINT #ch_bg,titu$
+2030   CSIZE #ch_bg,0,0
+2040   AT    #ch_bg,xsu,ysu
+2050   PRINT #ch_bg,sub1$
+2060   AT    #ch_bg,xsu+1,ysu
+2070   PRINT #ch_bg,sub2$
+2080   AT    #ch_bg,xno,yno
+2090   PRINT #ch_bg,nota$
+2100   OVER  #ch_bg,0
 2110 END IF 
 2120 REMark cargando numero de programas
 2130 INPUT #ch_fi,cadena$
@@ -279,7 +279,6 @@
 2880   PRINT #ch_in,cadena$
 2890 END REPeat bu
 2900 CLOSE #ch_fi
-2910 END IF 
 2920 END DEFine MUESTRA
 2930 :
 2940 DEFine PROCedure SELECCION

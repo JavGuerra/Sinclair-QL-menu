@@ -88,8 +88,8 @@
 970   lon=LEE_VALOR$   : voltea=LEE_VALOR$
 980   in_me=LEE_VALOR$ : pa_me=LEE_VALOR$
 990   in_se=LEE_VALOR$ : pa_se=LEE_VALOR$
-1000   marco=LEE_VALOR$ : t_mar=LEE_VALOR$
-1010   in_ma=LEE_VALOR$ : pa_ma=LEE_VALOR$
+1000  marco=LEE_VALOR$ : t_mar=LEE_VALOR$
+1010  in_ma=LEE_VALOR$ : pa_ma=LEE_VALOR$
 1020  in_in=LEE_VALOR$ : pa_in=LEE_VALOR$
 1030  in_pri=LEE_VALOR$: pa_pri=LEE_VALOR$
 1040  sombx=LEE_VALOR$ : somby=LEE_VALOR$

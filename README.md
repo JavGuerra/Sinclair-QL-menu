@@ -36,7 +36,7 @@ para realizar configuraciones en el menú.
 
 Usa el contenido de menu > menu_demo para hacer tu propio menú.
 
-__Importante__: Por defecto, el programa esta configurado para funcionar en flp1_. Cambia el valor de la variable disp$ tanto en el boot como en menu_bas para indicar el dispositivo adecuado.
+__Importante__: Por defecto, el programa esta configurado para funcionar en 'flp1_'. Cambia el valor de la variable disp$ tanto en el boot como en menu_bas para indicar el dispositivo adecuado.
 
 ## Licencia
 

@@ -1,0 +1,17 @@
+Resumen de uso de MENU BOOT
+
+El programa facilita el lanzamiento de aplicaciones
+a travƒs de distintos ficheros 'BOOT', y muestra info
+adjunta descrita en ficheros '_info'.
+
+Debemos configurar menu_lst, y si lo necesitamos,
+menu_cfg para definir las opciones del men™.
+
+Podemos usar 'menu_bas' como 'BOOT' o bien lanzarlo
+directamente con LRUN para ver el resulatado de
+nuestra configuraci–n. 
+
+'MENU BOOT' estŒ pensado para ser distribuido
+libremente con sus ficheros de configuraci–n junto a
+los programas. No tiene pues restricciones de uso ni
+de modificaci–n. Ver fichero leame_txt.

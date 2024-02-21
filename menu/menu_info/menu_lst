@@ -1,0 +1,20 @@
+***** info para menô de programas
+***** Versiñn - 1 lìnea
+1
+***** descripciñn: 4 lìneas de texto
+Primeros pasos con MENU BOOT
+Texto del subtìtulo lìnea 1
+Texto del subtìtulo lìnea 2
+Nota al pie
+***** nômero total de programas - 1 lìnea
+5
+***** listado de programas - 1 lìnea por programa
+1._El_programa
+2._Contenido
+3._Uso_del_menu
+4._Configurar
+5._Ayuda
+***** Fin de los datos
+Lo que sigue a la lista serå ignorado
+No dejar espacios detras de cada dato ni
+lìneas en blanco.

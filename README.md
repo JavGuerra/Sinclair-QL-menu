@@ -9,11 +9,11 @@ Ofrece una variada gama de posibilidades de configuración para mostrar un menú
 
 El menú puede mostrar o no información relacionada con las opciones según lo configuremos, puede recorrer una lista de opciones amplia, y lanzar una o varias de las opciones si se desea.
 
-![Configuraciones](img/configuraciones.png "Configuraciones")
+![Configuraciones](docs/configuraciones.png "Configuraciones")
 
 Se muestra a continuación un ejemplo de uso que corresponde al menú de inicio de un disco con varias aventuras conversacionales para QL.
 
-![Ejemplo](img/ejemplo.png "Ejemplo")
+![Ejemplo](docs/ejemplo.png "Ejemplo")
 
 ## Instrucciones
 

@@ -1,7 +1,7 @@
 ***** info para menô de programas
 ***** Versiñn - 1 lìnea
 1
-***** descripciñn: 4 lìneas de texto
+***** descripciñn - 4 lìneas
 Primeros pasos con MENU BOOT
 Texto del subtìtulo lìnea 1
 Texto del subtìtulo lìnea 2
@@ -14,7 +14,7 @@ Nota al pie
 3._Uso_del_menu
 4._Configurar
 5._Ayuda
-***** Fin de los datos
-Lo que sigue a la lista serå ignorado
-No dejar espacios detras de cada dato ni
-lìneas en blanco.
+***** fin de los datos
+Lo que sigue a la lista serå ignorado.
+No dejar espacios detras de cada dato
+ni lìneas en blanco.

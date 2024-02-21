@@ -2,16 +2,16 @@ El programa MENU BOOT
 
 El programa estå pensado para su uso en discos y/o
 microdrives que contengan varios programas y que
-requieran de distintos ficheros BOOT o EXEC para ser
-ejecutados. Sirve pues para facilitar la selecciñn de
-programas mediante un menô una vez insertado el
-soporte en el lector.
+requieran de distintos ficheros BOOT para inciiarse.
+Sirve para facilitar la selecciñn de programas de
+un medio determinado, de manera sencilla e informativa,
+mediante el uso de un menô.
 
 'MENU BOOT' es pues un BOOT de BOOTs interactivo.
 
-TambiÉn resulta ôtil para ejecutar una aplicaciñn que
-admita el uso de distintos ficheros de datos o para
+TambiÉn resulta ôtil para ejecutar aplicaciones que
+admitan el uso de distintos ficheros de datos o para
 cualquier cosa susceptible de ser lanzada desde BOOT.
 
-La configuraciñn por defecto de 'MENU BOOT' se usa
-para visualizar la ayuda que ahora se estå mostrando.
+La configuraciñn de este 'MENU BOOT' se ha usado para
+visualizar la ayuda que ahora se estå mostrando.

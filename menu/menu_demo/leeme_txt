@@ -1,6 +1,5 @@
 Sinclair QL MENU BOOT
 =====================
-
 JavGuerra multipurpose boot menu who
 run programs in the Sinclair QL easily.
 
@@ -8,25 +7,26 @@ Boot de carga multipropñsito que
 ejecuta programas en el Sinclair QL
 fåcilmente.
 
-
 Instrucciones
 -------------
+Para hacer funcionar su menô, ejecute:
 
-Para obtener informaciñn y primeras
-indicaciones de uso, y mostrar el
-funcionamiento de 'MENU BOOT', ejecute:
+    LRUN menu_bas
+o
+    LRUN boot
 
-LRUN menu_bas
+si quiere cargar TK2.
 
-y lea las instrucciones.
+El dispositivo flp1_ estå configurado
+por defecto. Cambia el valor de disp$
+en estos ficheros por el dispositivo
+y la ruta donde se ubique su menô.
 
 Consulte el contenido de manual_txt
 para mås informaciñn.
 
-
 Licencia
 --------
-
 'MENU BOOT' estå pensado para ser
 distribuido libremente con sus ficheros
 de configuraciñn junto a los programas.
@@ -36,10 +36,8 @@ de modificaciñn.
 El autor agradecerå sea citado en los
 crÉditos.
 
-
 Contactar
 ---------
-
 Puedes contactar con el autor para
 consultas, modificaciones o propuestas
 de mejora.
@@ -51,7 +49,6 @@ BOOT MENU versiñn 1.4
 Autor: Javier Guerra
 
 visite:
-
 http://sinclairql.es
 https://github.com/JavGuerra/Sinclair-QL-menu
 

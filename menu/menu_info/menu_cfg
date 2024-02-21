@@ -1,8 +1,8 @@
-***** config para menï¿½ de programas
-***** Versiï¿½n - 1 lï¿½nea
+***** config para men™ de programas
+***** versi–n - 1 l“nea
 1
-***** descripciï¿½n y valores - 1 lï¿½nea descripciï¿½n, 1 lï¿½nea valor
-multi - El programa terminarï¿½ al lanzar una tarea. [0|1] Defecto: 0
+***** descripci–n y valores - 1 l“nea descripci–n, 1 l“nea valor
+multi - El programa terminarŒ al lanzar una tarea. [0|1] Defecto: 0
 0
 modo - Modo de pantalla a elegir. [512|256|4|8] Defecto: 512
 512
@@ -10,73 +10,73 @@ an_ch - Ancho de caracteres en pixels. [6|12|n] Defecto: 6
 6
 al_ch - Alto de caracteres en pixels. [10|n] Defecto: 10
 10
-in_ex$ - Extensiï¿½n para archivos info. [cadena] Defecto: _info
+in_ex$ - Extensi–n para archivos info. [cadena] Defecto: _info
 _info
-ex_ex$ - Extensiï¿½n para archivos boot. [cadena] Defecto: _boot
+ex_ex$ - Extensi–n para archivos boot. [cadena] Defecto: _boot
 _boot
-info - Muestra informaciï¿½n de la opciï¿½n del menï¿½. [0|1] Defecto: 1
+info - Muestra informaci–n de la opci–n del men™. [0|1] Defecto: 1
 1
 fondo - Muestra el fondo relleno con un color. [0|1] Defecto: 1
 1
 scrbg - Muestra imagen sobre fondo. [0|1] Defecto: 1
 0
-scrpos - Posiciï¿½n de memoria donde cargar imagen. [valor] Defecto: 131072
+scrpos - Posici–n de memoria donde cargar imagen. [valor] Defecto: 131072
 131072
 scrn$ - Archivo con imagen de fondo. [cadena] Defecto: menu_scr
 menu_scr
 text - Muestra texto en el fondo [0|1] Defecto: 1
 0
-xti - Posiciï¿½n X del tï¿½tulo en caracteres. [valor] Defecto: 8
+xti - Posici–n X del t“tulo en caracteres. [valor] Defecto: 8
 8
-yti - Posiciï¿½n Y del tï¿½tulo en caracteres. [valor] Defecto: 15
+yti - Posici–n Y del t“tulo en caracteres. [valor] Defecto: 15
 15
-xsu - Posiciï¿½n X del subtï¿½tulo en caracteres. [valor] Defecto: 4
+xsu - Posici–n X del subt“tulo en caracteres. [valor] Defecto: 4
 3
-ysu - Posiciï¿½n Y del subtï¿½tulo en caracteres. [valor] Defecto: 15
+ysu - Posici–n Y del subt“tulo en caracteres. [valor] Defecto: 15
 15
-xno - Posiciï¿½n X de la nota al pie en caracteres. [valor] Defecto: 22
+xno - Posici–n X de la nota al pie en caracteres. [valor] Defecto: 22
 22
-yno - Posiciï¿½n Y de la nota al pie en caracteres. [valor] Defecto: 16
+yno - Posici–n Y de la nota al pie en caracteres. [valor] Defecto: 16
 16
 in_bg - Tinta para texto en el fondo de pantalla. [0..255] Defecto: 7
 7
 pa_bg - Papel para fondo en el fondo de pantalla. [0..255] Defecto: 80
 80
-xw - Posiciï¿½n X de la ventana de menï¿½ en pixels. [valor] Defecto: 90
+xw - Posici–n X de la ventana de men™ en pixels. [valor] Defecto: 90
 30
-yw - Posiciï¿½n Y de la ventana de menï¿½ en pixels. [valor] Defecto: 105
+yw - Posici–n Y de la ventana de men™ en pixels. [valor] Defecto: 105
 40
-anch - Ancho total de ventana de menï¿½ en caracteres. [valor] Defecto: 52
+anch - Ancho total de ventana de men™ en caracteres. [valor] Defecto: 52
 70
-alto - Alto total de ventana de menï¿½ en caracteres. [valor] Defecto: 10
+alto - Alto total de ventana de men™ en caracteres. [valor] Defecto: 10
 18
-lon - Ancho de la lista de menï¿½ en caracteres. [valor] Defecto: 12
+lon - Ancho de la lista de men™ en caracteres. [valor] Defecto: 12
 15
-voltea - Intercambiar orden de ventanas de menï¿½ e info. [0|1] Defecto: 0
+voltea - Intercambiar orden de ventanas de men™ e info. [0|1] Defecto: 0
 0
-in_me - Tinta para texto en la ventana de menï¿½. [0..255] Defecto: 0
+in_me - Tinta para texto en la ventana de men™. [0..255] Defecto: 0
 0
-pa_me - Papel para fondo en la ventana de menï¿½. [0..255] Defecto: 4
+pa_me - Papel para fondo en la ventana de men™. [0..255] Defecto: 4
 4
-in_se - Tinta para texto seleccionado en la ventana de menï¿½. [0..255] Defecto: 7
+in_se - Tinta para texto seleccionado en la ventana de men™. [0..255] Defecto: 7
 7
-pa_se - Papel para fondo seleccionado en la ventana de menï¿½. [0..255] Defecto: 2
+pa_se - Papel para fondo seleccionado en la ventana de men™. [0..255] Defecto: 2
 2
 marco - Anchura del marco alrededor de las ventanas. [0|n] Defecto: 1
 1
-t_mar - Tï¿½tulo en el marco de las ventanas. [0|1] Defrecto: 0
+t_mar - T“tulo en el marco de las ventanas. [0|1] Defrecto: 0
 1
-in_ma - Tinta para el tï¿½tulo en el marco de las ventanas. [0..255] Defecto: 7
+in_ma - Tinta para el t“tulo en el marco de las ventanas. [0..255] Defecto: 7
 7
 pa_ma - Papel para el fondo en el marco de las ventanas. [0..255] Defecto: 2
 2
-in_in - Tinta para el texto de la ventana de informaciï¿½n. [0..255] Defecto: 0
+in_in - Tinta para el texto de la ventana de informaci–n. [0..255] Defecto: 0
 0
-pa_in - Papel para el fondo de la ventana de informaciï¿½n. [0..255] Defecto: 7
+pa_in - Papel para el fondo de la ventana de informaci–n. [0..255] Defecto: 7
 7
-in_pri - Tinta para primera lï¿½nea de la ventana de info. [0..255] Defecto: 2
+in_pri - Tinta para primera l“nea de la ventana de info. [0..255] Defecto: 2
 2
-pa_pri - Tinta para el fondo de la primera lï¿½nea de info. [0..255] Defecto: 7
+pa_pri - Tinta para el fondo de la primera l“nea de info. [0..255] Defecto: 7
 7
 sombx - Ancho de la sombra en pixels. [0|n] Defecto: 8
 8
@@ -84,24 +84,23 @@ somby - Alto de la sombra en pixels. [0|n] defecto: 5
 5
 pa_so - Papel de fondo de la sombra. [0..255] Defecto: 0
 0
-borde - Ancho del borde de las ventanas menï¿½ e info. [0|n] Defecto: 3
+borde - Ancho del borde de las ventanas men™ e info. [0|n] Defecto: 3
 3
-sube - Cï¿½digo ASCII de la tecla arriba. [0..255] Defecto: 208
+sube - C–digo ASCII de la tecla arriba. [0..255] Defecto: 208
 208
-baja - Cï¿½digo ASCII de la tecla abajo. [0..255] Defecto: 216
+baja - C–digo ASCII de la tecla abajo. [0..255] Defecto: 216
 216
-ante - Cï¿½digo ASCII de la tecla anterior. [0..255] Defecto: 192 - No implementado
+ante - C–digo ASCII de la tecla anterior. [0..255] Defecto: 192 - No implementado
 192
-sigu - Cï¿½digo ASCII de la tecla siguiente. [0..255] Defecto: 200 - No implementado
+sigu - C–digo ASCII de la tecla siguiente. [0..255] Defecto: 200 - No implementado
 200
-redb - Cï¿½digo ASCII de la tecla redibujar (F5). [0..255] Defecto: 248
+redb - C–digo ASCII de la tecla redibujar (F5). [0..255] Defecto: 248
 248
-sale - Cï¿½digo ASCII de la tecla salir (ESC). [0..255] Defecto: 27
+sale - C–digo ASCII de la tecla salir (ESC). [0..255] Defecto: 27
 27
-opci - Cï¿½digo ASCII de la tecla seleccionar (SPACE). [0..255] Defecto: 32
+opci - C–digo ASCII de la tecla seleccionar (SPACE). [0..255] Defecto: 32
 32
-***** Fin de los datos
-Lo que sigue a la lista serï¿½ ignorado.
-Una lï¿½nea describe, la otra contiene el dato.
-No dejar espacios detras de cada dato ni
-lï¿½neas en blanco.
+***** fin de los datos
+Lo que sigue a la lista serŒ ignorado.
+No dejar espacios detras de cada dato
+ni l“neas en blanco.

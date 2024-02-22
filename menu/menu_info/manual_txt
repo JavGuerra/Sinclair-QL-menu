@@ -12,7 +12,7 @@ Uso
 Caracter“sticas
 Opciones
 Limitaciones
-CÂ–mo funciona
+C–mo funciona
 Un ejemplo
     BOOT
     MENU_BAS como BOOT
@@ -43,7 +43,7 @@ desde un fichero BOOT.
 La configuraci–n por defecto de 'MENU BOOT' se usa para mostrar la ayuda del
 programa.
 
-Ejecute menu_bas para lanzar el men™ que mostrarÂŒ distintas secciones de ayuda
+Ejecute menu_bas para lanzar el men™ que mostrarŒ distintas secciones de ayuda
 en pantalla.
 
 
@@ -70,7 +70,7 @@ Se incluye ademŒs un fichero de ayuda llamado:
 Uso
 ---
 
-'MENU BOOT' estÂŒ pensado para ser distribuido libremente con sus ficheros de
+'MENU BOOT' estŒ pensado para ser distribuido libremente con sus ficheros de
 configuraci–n junto a los programas. No tiene pues restricciones de uso ni de
 modificaci–n.
 
@@ -197,7 +197,7 @@ BOOT
 
 El BOOT que se adjunta carga el TK2 y lanza el programa MENU_BAS:
 
- disp$='flp1_' : TK2_EXT : DATA_USE=disp$ : PROG_USE=disp$ : DEST_USE=disp$ : LRUN menu_bas
+ disp$='flp1_' : TK2_EXT : DATA_USE disp$ : PROG_USE disp$ : DEST_USE disp$ : LRUN menu_bas
 
 Este BOOT es un ejemplo de c–mo podemos cargar los valores que usaremos por
 defecto en caso de que compilemos MENU_BAS (2). Tras la compilaci–n s–lo
@@ -327,7 +327,7 @@ comentarios:
 ***** info para men™ de programas
 ***** Versi–n - 1 l“nea
 1
-***** descripci–n: 4 lineas de texto
+***** descripci–n - 4 lineas
 Texto del t“tulo
 Texto del subtitulo linea 1
 Texto del subtitulo linea 2
@@ -339,7 +339,7 @@ aplicacion1
 aplicacion2
 aplicacion3
 ***** Fin de los datos
-Lo que sigue a la lista de programas serÂŒ ignorado
+Lo que sigue a la lista de programas serŒ ignorado
 
 Realmente las l“neas que se muestran con "*****" son ignoradas, as“ que podemos
 dejarlas en blanco completamente o poner otro separador u otro texto a nuestro

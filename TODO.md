@@ -10,4 +10,5 @@ TO-DO
 - Optimizaciones en la visualización del menú, los movimientos a través del menú y la info en 'menu_bas'.
 - Hacer programa para configurar un fichero 'menu_cfg' paso a paso, de forma interactiva.
 - Hacer programa para detectar BOOTs y generar 'menu_lst' automáticamente.
+- Hacer que el propio 'menu_bas' identifique los ficheros terminados en _boot en ausencia de menu_lst.
 - Distribuir una versión compilada de 'menu_bas'.

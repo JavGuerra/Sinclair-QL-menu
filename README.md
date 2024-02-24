@@ -19,7 +19,7 @@ Se muestra a continuación la captura de un ejemplo de uso que corresponde al me
 
 Copia el contenido de la carpeta menu a tu QL.
 
-Lee el archivo leeme_txt. Puedes mostrarlo con view, por ejemplo. Y sigue sus pasos para crear tu propio menú
+Lee el archivo leeme_txt. Puedes mostrarlo con view, por ejemplo. Y sigue sus pasos para crear tu propio menú.
 
 Para más información sobre cómo funciona MENU BOOT y sus parámetros de configuración, lee el manual:
 
@@ -28,7 +28,11 @@ Para más información sobre cómo funciona MENU BOOT y sus parámetros de confi
 
 Puedes usar las demos en 'menu > demo' para ver ejemplos de distintas configuraciones y uso de MENU BOOT.
 
-__Importante__: Por defecto, el programa esta configurado para funcionar en 'flp1_'. Cambia el valor de la variable disp$ tanto en el boot como en menu_bas para indicar el dispositivo adecuado.
+__Importante__: 
+
+- Todos los ficheros del menú deben estar en la misma ubicación.
+
+- Por defecto, el programa esta configurado para funcionar en la ruta 'flp1_'. Cambia el valor de la variable disp$, tanto en el boot como en menu_bas, para indicar la ruta adecuada a menu_bas.
 
 ## Licencia
 

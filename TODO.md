@@ -12,3 +12,4 @@ TO-DO
 - Hacer programa para detectar BOOTs y generar 'menu_lst' automáticamente.
 - Hacer que el propio 'menu_bas' identifique los ficheros terminados en _boot en ausencia de menu_lst.
 - Distribuir una versión compilada de 'menu_bas'.
+- Hacer una versión en inglés.

@@ -62,11 +62,11 @@
 710 scrpos= 131072    : scrn$="menu_scr"
 720 in_bg=7 : pa_bg=82: xti=8   : yti=15
 730 xsu=4   : ysu=15  : xno=22  : yno=16
-740 xw=208  : yw=105  : anch=14 : alto=10
+740 xw=208  : yw=80   : anch=14 : alto=10
 750 lon=14  : voltea=0: in_me=0 : pa_me=4
 760 in_se=7 : pa_se=2 : marco=1 : t_mar=1
 770 in_in=0 : pa_in=7 : in_pri=2: pa_pri=7
-780 in_ma=7 : pa_ma=2 : sombx=8 : somby=5
+780 in_ma=7 : pa_ma=2 : sombx=4 : somby=2
 790 pa_so=0 : borde=3 : sube=208: baja=216
 800 ante=192: sigu=200: redb=248: sale=27
 810 opci=32

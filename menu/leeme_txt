@@ -1,0 +1,103 @@
+Sinclair QL MENU BOOT
+=====================
+Boot de carga multipropñsito interac-
+tivo para programas en Sinclair QL.
+
+Instrucciones
+-------------
+1. Recopila, en una misma ubicaciñn,
+   los programas que vas a usar en el
+   menô.
+
+2. Crea un fichero <nombre>_boot por
+   cada programa que aparecerå en el
+   menô.
+
+3. Si tu menô va a mostrar informa-
+   ciñn de cada programa, crea los
+   ficheros <nombre>_info correspon-
+   dientes, donde <nombre> serå el
+   mismo de cada _boot.
+
+4. Aâade estos ficheros de MENU BOOT:
+     - boot (o haz el tuyo propio)
+     - menu_bas
+     - menu_lst
+     - menu_scr
+       (si deseas usar esta imagen)
+
+5. Configura menu_bas cambiando el
+   valor de la variable disp$ para
+   indicar la ruta final de tu menô,
+   y de extension si deseas usar o no
+   (1 ñ 0) el TK2. Lìneas 140 y 150
+   respectivamente.
+
+6. Configura el fichero menu_lst con
+   el nombre de cada aplicaciñn que
+   aparecerå en la lista de opciones
+   de tu menô. El nombre debe coin-
+   cidir con el de cada <nombre>_boot
+   Los guiones '_' se mostrarån como
+   espacios ' ' en blanco.
+
+7. Para configurar cñmo se verå tu
+   menô, puedes crear el fichero
+   menu_cfg a partir de alguno de los
+   ficheros _cfg de la carpeta demos,
+   pero no es imprescindible. Si el
+   fichero menu_cfg no estå creado,
+   menu_bas usara los valores de la
+   configuraciñn por defecto.  Al
+   aâadir tu propio fichero menu_cfg
+   es necesario incluir su nombre y
+   extension en la variable conf$ en
+   la lìnea 220. Por ejemplo:
+   conf$="menu_cfg"
+
+Haciendo funcionar tu menô
+--------------------------
+Para hacer funcionar tu menô, asegu-
+rate de tener todos los ficheros en
+la ubicaciñn correcta, y ejecuta:
+
+    LRUN menu_bas
+o
+    LRUN boot (si quieres cargar TK2)
+
+El dispositivo flp1_ estå configurado
+por defecto. Cambia el valor de disp$
+en estos ficheros por el dispositivo
+y la ruta donde se ubique tu menô.
+
+Consulta el contenido de manual_txt
+para mås informaciñn.
+
+Licencia
+--------
+'MENU BOOT' puede ser distribuido
+junto a sus ficheros de configuraciñn
+y usado libremente con tus programas.
+No tiene restricciones de uso ni de
+modificaciñn.
+
+AgradecerÉ ser citado en los crÉditos
+
+Contactar
+---------
+Puedes contactar para consultas, no-
+tificaciñn de errores, modificaciones
+o propuestas. 
+
+Hazme saber para quÉ usaste MENU BOOT.
+
+TambiÉn puedes contribuir a la mejora
+de esta aplicaciñn a travÉs de Github.
+
+MENU BOOT versiñn 1.4
+Autor: Javier Guerra
+
+visite:
+http://sinclairql.es
+https://github.com/JavGuerra/Sinclair-QL-menu
+

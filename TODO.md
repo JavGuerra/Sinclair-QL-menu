@@ -1,9 +1,13 @@
 TO-DO
 -----
-- Hacer programa para configurar un menu_cfg paso a paso.
-- Reorganizar carpeta menu añadiendo menú mínimo con configurador para descargar.
-- Gestionar coordenadas 'X' e 'Y' para 'AT' si ROM VER$="FB".
-- Control de errores: archivos no disponibles, otros.
-- Optimizaciones en la visualización del menú, los movimientos a través del menú y la info.
-- Detectar automáticamente el número de programas en menu_lst.
-- Distribuir versión compilada.
+- Revisar el funcionamiento de la opción sin 'menu_cfg' en 'menu_bas'.
+- Comprobar el funcionamiento de esta aplicación en MODO 8.
+- Sacar la configuración de TK2 y de disp$ de 'menu_bas'.
+- Gestionar coordenadas 'X' e 'Y' para 'AT' si ROM VER$="FB" en 'menu_bas'.
+- Detectar automáticamente el número de programas en 'menu_lst' dentro de 'menu_bas'.
+- Gestionar el control de errores en 'menu_bas' para archivos no disponibles y otros.
+- Opción para no lanzar aplicaciones, para crear sólo menús de información, en 'menu_bas'.
+- Optimizaciones en la visualización del menú, los movimientos a través del menú y la info en 'menu_bas'.
+- Hacer programa para configurar un fichero 'menu_cfg' paso a paso, de forma interactiva.
+- Hacer programa para detectar BOOTs y generar 'menu_lst' automáticamente.
+- Distribuir una versión compilada de 'menu_bas'.

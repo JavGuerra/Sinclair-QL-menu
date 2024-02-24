@@ -3,7 +3,7 @@
 120 :
 130 REMark <!> Es importante definir disp$
 140 disp$="flp1_"    : REMark disp. x def.
-150 extension=1      : REMark ´TK2? S/N
+150 extension=0      : REMark ´TK2? S/N
 160 IF extension THEN 
 170   TK2_EXT
 180   PROG_USE disp$
@@ -58,12 +58,12 @@
 670 IF ch_val=-7 OR conf$="" THEN 
 680 multi=0 : modo=4  : an_ch=6 : al_ch=10
 690 in_ex$= "_info"   : ex_ex$= "_boot"
-700 info=1  : fondo=0 : scrbg=0 : text=1
+700 info=0  : fondo=0 : scrbg=0 : text=1
 710 scrpos= 131072    : scrn$="menu_scr"
 720 in_bg=7 : pa_bg=82: xti=8   : yti=15
 730 xsu=4   : ysu=15  : xno=22  : yno=16
-740 xw=90   : yw=105  : anch=52 : alto=10
-750 lon=12  : voltea=0: in_me=0 : pa_me=4
+740 xw=208  : yw=105  : anch=14 : alto=10
+750 lon=14  : voltea=0: in_me=0 : pa_me=4
 760 in_se=7 : pa_se=2 : marco=1 : t_mar=1
 770 in_in=0 : pa_in=7 : in_pri=2: pa_pri=7
 780 in_ma=7 : pa_ma=2 : sombx=8 : somby=5

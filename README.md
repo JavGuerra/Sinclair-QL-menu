@@ -3,7 +3,7 @@ JavGuerra multipurpose boot menu who run programs in the [Sinclair QL](https://e
 
 ## MENU BOOT
 
-v. 1.5.1
+v. 1.4.1
 
 El programa, que está en su versión 1.4, fue creado y posteriormente actualizado en 2008.
 

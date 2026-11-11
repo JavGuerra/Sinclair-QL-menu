@@ -1,5 +1,6 @@
-MENÚ BOOT ver.1.4
------------------
+MENÚ BOOT
+=========
+Ver.1.4.1 - 2026-11
 Por Javier Guerra
 
 
@@ -77,6 +78,11 @@ El programa es capaz de mostrar una lista de aplicaciones, resaltando una de ell
 
 Si no existe el fichero de configuración MENU_CFG, el programa mostrará por defecto sólo una ventana central con las opciones del menú y su información. Esto ocurre si está activado el TK2 o bien no se indica el valor de conf$ en el programa menu_bas.
 
+Si conf$ contiene un nombre de fichero y no existe, el programa:
+
+- Con TK2 (extension=1): usa los valores por defecto.
+- Sin TK2 (extension=0): se detiene con un error de fichero no encontrado. En ese caso, compruebe que MENU_CFG está en el soporte o ponga conf$="" para usar los valores por defecto.
+
 La ventana donde se muestra el menú y la información puede ser movida de sitio (xw, yw), y redimensionada (anch, alto). También la anchura de menú puede ser redimensionada (lon), siendo la anchura de la ventana de información inversamente proporcional a los cambios de la anchura del menú, es decir, si ampliamos la anchura del menú reduciremos la anchura del espacio de información. Afortunadamente siempre podemos cambiar la anchura total para compensar, teniendo como límite el ancho de la pantalla. Podemos, además, intercambiar el orden de visualización de menu e info.
 
 Las entradas en el menú no están limitadas a la altura de la ventana. Si el número de entradas del menú excede la altura en caracteres de la ventana de menú, se mostrará un indicador  en la ventana del número de opción seleccionada y del total de opciones del menú, y podrá hacerse scroll con las opciones del menú en la ventana.
@@ -99,9 +105,20 @@ Limitaciones
 
 El programa cuenta con algunas limitaciones:
 
-	Requiere que todos los ficheros se encuentren en la misma ubicación.
-	El nombre de fichero sin la extensión y el nombre del menú han de ser el mismo.
-	La imagen de fondo tiene forzosamente que ser como el ancho de la pantalla y no mayor que esta. 
+- Requiere que todos los ficheros se encuentren en la misma ubicación.
+
+- La imagen de fondo tiene forzosamente que ser como el ancho de la pantalla y no mayor que esta. 
+
+- Longitud de los nombres de fichero:
+
+  El nombre de cada entrada en MENU_LST es el nombre base de sus ficheros, sin extensión (el programa añade _info y _boot, configurables). Ese nombre no puede tener más caracteres que el ancho de la lista del menú (parámetro 'lon', 14 por defecto). Si es más largo, el menú lo mostrará recortado y el programa no encontrará sus ficheros al seleccionarlo.
+
+  Ejemplo, con lon=14. La extensión (_info, _boot) no cuenta para este límite:
+
+    aplicacion1        (11 caracteres)  correcto
+    aventura_grafica_1 (18 caracteres)  INCORRECTO: no se podrá lanzar 
+
+  Si se cambia 'lon' en MENU_CFG, se ha de comprobar que todos los nombres de MENU_LST siguen cabiendo.
 
 
 Cómo funciona
@@ -213,7 +230,7 @@ A través de MENU_CFG podemos modificar los siguientes parámetros:
 - 'Papel' para el fondo.
 - Posición 'x' e 'y' de la ventana del menú, en pixels.
 - Ancho y alto de la ventana en caracteres. (toma en cuenta ancho de chrs.)
-- Ancho de la lista del menú en chrs.
+- Ancho de la lista del menú en chrs. (ver limitaciones)
 - ¿Menú a la izquierfa o a la derecha?
 - 'Tinta' para el texto y 'papel' para el fondo de la ventana de menú.
 - 'Tinta' para el texto y 'papel' para el fondo de la opción seleccionada.
@@ -254,6 +271,10 @@ aplicacion3
 Lo que sigue a la lista de programas será ignorado
 
 Realmente las líneas que se muestran con "*****" son ignoradas, así que podemos dejarlas en blanco completamente o poner otro separador u otro texto a nuestro gusto.
+
+Cada línea de la lista de programas es el nombre base de los ficheros de esa entrada, sin extensión, y no puede superar 'lon' caracteres (ver Limitaciones).
+
+Los caracteres "_" se muestran como espacios en el menú.
 
 
 viendo el DIR del soporte
@@ -297,7 +318,7 @@ Llamando a MENU_EXE (MENU_BAS compilado) desde el BOOT (no se listan los fichero
 MENU_SCR
 --------
 
-Con el programa se adjunta imagen que puede ser usada como diseño de cabecera, y que ocupa 1/4 de la pantalla. Por defecto, el fichero se llama MENU_SCR y se carga en la posición de memoria 131972, la primera posición de la memoria de pantalla.
+Con el programa se adjunta imagen que puede ser usada como diseño de cabecera, y que ocupa 1/4 de la pantalla. Por defecto, el fichero se llama MENU_SCR y se carga en la posición de memoria 131072, la primera posición de la memoria de pantalla.
 
 Puede usarse cualquier otra imagen teniendo en cuenta las limitaciones antes descritas.
 
@@ -327,6 +348,7 @@ Recuerda definir la variable disp$ en el BOOT para indicar la ruta desde donde s
 
 Cargue en el _BOOT de cada aplicación las extensiones y/o parámetros que el programa requiera para su perfecta ejecución.
 
+Si al seleccionar una opción aparece un error de fichero no encontrado, comprueba que el nombre en MENU_LST existe como NOMBRE_BOOT en el soporte y que no supera 'lon' caracteres. Comprueba también si existe el _info y el _boot de la entrada seleccionada.
 
 (1) TK2 ya es de libre distribución y uso. Puede encontrarse en casi todas las controladoras y tarjetas de expansión para QL o bien junto a los emuladores. Podemos cargar TK2 desde disco ya que el código de este es totalmente reubicable.
 

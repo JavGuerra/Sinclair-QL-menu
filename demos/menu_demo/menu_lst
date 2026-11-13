@@ -1,18 +1,18 @@
-***** info para men™ de programas
-***** Versi–n - 1 l“nea
+# Info para menï¿½ de programas
+# Versiï¿½n - 1 lï¿½nea
 1
-***** descripci–n - 4 l“neas
-Texto del t“tulo
-Texto del subt“tulo l“nea 1
-Texto del subt“tulo l“nea 2
+# Descripciï¿½n - 4 lï¿½neas
+Texto del tï¿½tulo
+Texto del subtï¿½tulo lï¿½nea 1
+Texto del subtï¿½tulo lï¿½nea 2
 Nota al pie
-***** n™mero total de programas - 1 l“nea
+# Nï¿½mero total de programas - 1 lï¿½nea
 3
-***** listado de programas - 1 l“nea por programa
+# Listado de programas - 1 lï¿½nea por programa
 aplica_1
 aplica_2
 aplica_3
-***** fin de los datos
-Lo que sigue a la lista serŒ ignorado.
-No dejar espacios detras de cada dato
-ni l“neas en blanco.
+# Fin de los datos
+# Lo que sigue a la lista serï¿½ ignorado.
+# No dejar espacios detrï¿½s de cada dato
+# ni lï¿½neas en blanco.

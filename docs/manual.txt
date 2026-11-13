@@ -163,7 +163,7 @@ MENU_BAS como BOOT
 Las primeras líneas del programa MENU_BAS son las únicas que deberás alterar en caso de usar MENU_BAS como BOOT o en cualquier otro caso. Estas líneas son:
 
  100 REMark programa boot-menu
- 110 REMark version 1.4 - jav 2008
+ 110 REMark version 1.4.1 - jav 2008, 2026
  120 :
  130 extension=1 : REMark TK2 cargado S/N
  140 :
@@ -203,7 +203,7 @@ MENU_CFG
 
 Podemos configurar el entorno del menú que estamos creando mediante el fichero MENU_CFG. Si el fichero MENU_CFG no existe, el programa tomará los datos de configuración por defecto.
 
-MENU_CFG contiene los valores de las variables descritas en este manual, y es autoexplicativo.
+MENU_CFG contiene los valores de las variables descritas en este manual, y es auto-explicativo.
 
 
 Parámetros del menú
@@ -231,7 +231,7 @@ A través de MENU_CFG podemos modificar los siguientes parámetros:
 - Posición 'x' e 'y' de la ventana del menú, en pixels.
 - Ancho y alto de la ventana en caracteres. (toma en cuenta ancho de chrs.)
 - Ancho de la lista del menú en chrs. (ver limitaciones)
-- ¿Menú a la izquierfa o a la derecha?
+- ¿Menú a la izquierda o a la derecha?
 - 'Tinta' para el texto y 'papel' para el fondo de la ventana de menú.
 - 'Tinta' para el texto y 'papel' para el fondo de la opción seleccionada.
 - Anchura del borde de la ventana de menú y ventana de info
@@ -251,26 +251,26 @@ Nota: 'Tinta' y 'papel' se refiere a los atributos de las correspondientes instr
 MENU_LST
 --------
 
-Se muestra a continuación la estructura de un archivo BOOT_INFO de ejemplo con tres aplicaciones. La estructura y las lineas con '*****'  deben respetarse hasta la línea marcada como  '***** Fin de los datos'. Luego pueden añadirse comentarios:
+Se muestra a continuación la estructura de un archivo BOOT_INFO de ejemplo con tres aplicaciones. La estructura y las lineas con '#' deben respetarse hasta la línea marcada como '# Fin de los datos'. Luego pueden añadirse comentarios:
 
-***** info para menú de programas
-***** Versión - 1 línea
+# Info para menú de programas
+# Versión - 1 línea
 1
-***** descripción: 4 lineas de texto
+# Descripción: 4 lineas de texto
 Texto del título
 Texto del subtitulo linea 1
 Texto del subtitulo linea 2
 Nota al pie
-***** número total de programas - 1 linea
+# Número total de programas - 1 linea
 3
-***** listado de programas - 1 linea por programa
+# Listado de programas - 1 linea por programa
 aplicacion1
 aplicacion2
 aplicacion3
-***** Fin de los datos
-Lo que sigue a la lista de programas será ignorado
+# Fin de los datos
+# Lo que sigue a la lista de programas será ignorado
 
-Realmente las líneas que se muestran con "*****" son ignoradas, así que podemos dejarlas en blanco completamente o poner otro separador u otro texto a nuestro gusto.
+Realmente las líneas que se muestran con "#" son ignoradas, así que podemos dejarlas en blanco completamente o poner otro separador u otro texto a nuestro gusto.
 
 Cada línea de la lista de programas es el nombre base de los ficheros de esa entrada, sin extensión, y no puede superar 'lon' caracteres (ver Limitaciones).
 
